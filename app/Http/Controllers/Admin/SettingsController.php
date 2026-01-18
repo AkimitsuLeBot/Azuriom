@@ -100,7 +100,7 @@ class SettingsController extends Controller
                 'url' => ['required', 'url'],
                 'timezone' => ['required', 'timezone'],
                 'copyright' => ['nullable', 'string', 'max:150'],
-                'keywords' => ['nullable', 'string', 'max:150'],
+                'keywords' => ['nullable', 'string', 'max:255'],
                 'locale' => ['required', 'string', Rule::in($this->getAvailableLocaleCodes())],
                 'icon' => ['nullable', 'exists:images,file'],
                 'logo' => ['nullable', 'exists:images,file'],

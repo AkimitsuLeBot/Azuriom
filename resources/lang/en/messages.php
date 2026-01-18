@@ -184,6 +184,7 @@ return [
             'disable' => 'Disable 2FA',
             'manage' => 'Manage 2FA',
             'info' => 'Scan the QR code above with a two-factor authentication app on your phone like <a href="https://authy.com/" target="_blank" rel="noopener norefferer">Authy</a>, <a href="https://secrets.app/" target="_blank" rel="noopener norefferer">Secrets</a> or Google Authenticator.',
+            'backup' => 'If you lose access to your two-factor authentification code, the recovery codes are the <strong>only way</strong> to regain access to your account.',
             'secret' => 'Secret key: :secret',
             'title' => 'Two-Factor Authentication',
             'codes' => 'Show recovery codes',
