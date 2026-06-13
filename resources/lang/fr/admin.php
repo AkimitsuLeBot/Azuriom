@@ -399,6 +399,12 @@ return [
         'delete_default' => 'Ce rôle ne peut pas être supprimé.',
         'delete_own' => 'Vous ne pouvez pas supprimer votre rôle.',
 
+        'group' => [
+            'admin' => 'Administration',
+            'comments' => 'Commentaires',
+            'maintenance' => 'Maintenance',
+        ],
+
         'discord' => [
             'title' => 'Lier les rôles avec Discord',
             'enable' => 'Activer la liaison des rôles avec Discord',
@@ -426,6 +432,7 @@ return [
         'admin-roles' => 'Voir et gérer les rôles',
         'admin-posts' => 'Voir et gérer les articles',
         'admin-settings' => 'Voir et gérer les paramètres',
+        'admin-servers' => 'Voir et gérer les serveurs',
         'admin-users' => 'Voir et gérer les utilisateurs',
         'admin-users-personal' => 'Voir et gérer les informations personnelles des utilisateurs',
         'admin-themes' => 'Voir et gérer les thèmes',
@@ -614,6 +621,11 @@ return [
                 'enabled' => 'Activation de l\'authentification à deux facteurs',
                 'disabled' => 'Désactivation de l\'authentification à deux facteurs',
             ],
+        ],
+
+        'bans' => [
+            'created' => 'Bannissement de l\'utilisateur #:user : ":reason"',
+            'deleted' => 'Retrait du bannissement de l\'utilisateur #:user',
         ],
 
         'settings' => [

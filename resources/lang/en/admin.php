@@ -399,6 +399,12 @@ return [
         'delete_default' => 'This role cannot be deleted.',
         'delete_own' => 'You cannot delete your role.',
 
+        'group' => [
+            'admin' => 'Administration',
+            'comments' => 'Comments',
+            'maintenance' => 'Maintenance',
+        ],
+
         'discord' => [
             'title' => 'Link Discord roles',
             'enable' => 'Enable Discord roles link',
@@ -426,6 +432,7 @@ return [
         'admin-posts' => 'View and manage posts',
         'admin-roles' => 'View and manage roles',
         'admin-settings' => 'View and manage settings',
+        'admin-servers' => 'View and manage servers',
         'admin-users' => 'View and manage users',
         'admin-users-personal' => 'View and manage personal user information',
         'admin-themes' => 'View and manage themes',
@@ -603,7 +610,7 @@ return [
         'users' => [
             'updated' => 'Updated user #:id',
             'deleted' => 'Deleted user #:id',
-            'transfer' => 'Send money :money to user #:id',
+            'transfer' => 'Sent money :money to user #:id',
 
             'login' => 'Successful login from :ip (2FA: :2fa)',
             'api' => [
@@ -614,6 +621,11 @@ return [
                 'enabled' => 'Enabled two-factor authentication',
                 'disabled' => 'Disabled two-factor authentication',
             ],
+        ],
+
+        'bans' => [
+            'created' => 'Banned user #:user: ":reason"',
+            'deleted' => 'Removed ban from user #:user',
         ],
 
         'settings' => [

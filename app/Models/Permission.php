@@ -3,6 +3,7 @@
 namespace Azuriom\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Str;
 
 /**
  * @property int $id
@@ -24,6 +25,7 @@ class Permission extends Model
         'admin.redirects' => 'admin.permissions.admin-redirects',
         'admin.posts' => 'admin.permissions.admin-posts',
         'admin.settings' => 'admin.permissions.admin-settings',
+        'admin.servers' => 'admin.permissions.admin-servers',
         'admin.roles' => 'admin.permissions.admin-roles',
         'admin.users' => 'admin.permissions.admin-users',
         'admin.users.personal' => 'admin.permissions.admin-users-personal',
@@ -63,6 +65,15 @@ class Permission extends Model
     public static function permissions(): array
     {
         return array_keys(self::$permissions);
+    }
+
+    public static function groupedPermissions(): array
+    {
+        return collect(self::$permissions)
+            ->groupBy(fn (string $desc, string $perm) => Str::before($perm, '.'), true)
+            ->sortKeys()
+            ->map(fn ($permissions) => $permissions->all())
+            ->all();
     }
 
     public static function registerPermissions(array $permissions): void

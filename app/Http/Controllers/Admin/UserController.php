@@ -70,6 +70,7 @@ class UserController extends Controller
     {
         return view('admin.users.create', [
             'roles' => Role::orderByDesc('power')->get(),
+            'defaultRoleId' => Role::defaultRoleId(),
         ]);
     }
 
@@ -84,9 +85,10 @@ class UserController extends Controller
 
         $this->validateRole($request->user(), $role);
 
-        $user = new User(Arr::except($request->validated(), 'role'));
-        $user->role()->associate($role);
-        $user->save();
+        User::forceCreate([
+            ...Arr::except($request->validated(), 'role'),
+            'role_id' => $role->id,
+        ]);
 
         return to_route('admin.users.index')
             ->with('success', trans('messages.status.success'));
@@ -121,7 +123,7 @@ class UserController extends Controller
             return redirect()->back();
         }
 
-        $user->fill(Arr::except($request->validated(), 'role'));
+        $user->forceFill(Arr::except($request->validated(), 'role'));
 
         $role = Role::find($request->input('role'));
 
